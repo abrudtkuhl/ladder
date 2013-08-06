@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Ladder",
+  "description": "Hoist yourself over annoying paywalls",
+  "version": "0.1",
+
+  "permissions": [
+    "cookies", "tabs", "http://*/*", "https://*/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://www.desmoinesregister.com/*", "http://blogs.desmoinesregister.com/*"],
+    "css": ["front.css"]
+  }]
+}
