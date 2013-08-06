@@ -9,10 +9,10 @@
     "cookies", "tabs", "http://*/*", "https://*/*"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js", "lib/URI.min.js"]
   },
   "content_scripts": [{
     "matches": ["http://www.desmoinesregister.com/*", "http://blogs.desmoinesregister.com/*"],
-    "css": ["front.css"]
+    "css": ["hide.css"]
   }]
 }
