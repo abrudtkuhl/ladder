@@ -1,0 +1,15 @@
+{
+  "version": "0.1",
+  "sites": [
+    {
+      "host": "www.desmoinesregister.com",
+      "cookie": "EMETA_NCLICK",
+      "element": ""    
+    },
+    {
+      "host": "www.nytimes.com",
+      "cookie": "EMETA_NCLICK",
+      "element": ""
+    }
+  ]
+}
