@@ -21,9 +21,11 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 				console.log("## MATCH ##");
 
 				if (results.length === 1) {
+					console.log("## REMOVING COOKIE ##");
+					console.log(results[0].cookie);
 					chrome.cookies.remove({
-						name: result[0].cookie,
-						url: result[0].host
+						name: results[0].cookie,
+						url: results[0].host
 					});
 				}
 			}
