@@ -9,24 +9,28 @@ chrome.windows.onCreated.addListener(function(window) {
 });
 
 chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-	if (changeInfo !== null && changeInfo !== "undefined" && changeInfo.status === "loading") {
+	if (changeInfo !== null && changeInfo !== "undefined" && changeInfo.status === "complete") {
 		if (tab !== null && tab !== "undefined") {
-			var host = URI.parse(tab.url);
+			var uri = new URI(tab.url);
+			var host = uri.scheme() + "://" + uri.hostname();
+
 			var results = $.grep(sites, function(e) {
-				return e.host === host.hostname;
+				return e.host === host;
 			});
 
-			if (results !== null && results.length > 0) {
-				// do stuff
-				console.log("## MATCH ##");
-
-				if (results.length === 1) {
-					console.log("## REMOVING COOKIE ##");
-					console.log(results[0].cookie);
+			if (results !== null && results.length === 1) {
+				var site = results[0];
+				
+				if (site.cookie !== "undefined" && site.cookie !== "") {
+					console.log("## REMOVING COOKIE FOR " +  host + " COOKIE == " + site.cookie + " ##");
 					chrome.cookies.remove({
-						name: results[0].cookie,
-						url: results[0].host
+						name: site.cookie,
+						url: site.host
 					});
+				}				
+
+				if (site.element !== "undefined" && site.element !== "") {
+					console.log("## HIDING POPUPS FOR " + host + " ELEMENT == " + site.element + " ##");
 				}
 			}
 		}

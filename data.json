@@ -2,14 +2,19 @@
   "version": "0.1",
   "sites": [
     {
-      "host": "www.desmoinesregister.com",
+      "host": "http://www.desmoinesregister.com",
       "cookie": "EMETA_NCLICK",
-      "element": ""    
+      "element": "#persistNotif"    
     },
     {
-      "host": "www.nytimes.com",
-      "cookie": "EMETA_NCLICK",
-      "element": ""
+      "host": "http://www.nytimes.com",
+      "cookie": "",
+      "element": "overlay,gatewayCreative"
+    },
+    {
+      "host": "http://www.washingtonpost.com",
+      "cookie": "rpld1",
+      "element": "#wp_Alert"
     }
   ]
 }
