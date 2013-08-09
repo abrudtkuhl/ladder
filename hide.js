@@ -1,11 +1,11 @@
 // hide.js
 $(document).ready(function() {
-	console.log("made it to hide");
+	var sites = [];
 	var uri = new URI();
-	console.log(uri);
-	/*$.getJSON("data.json", function(data) {
-		$.each(data.sites, function(key, value) {
-	    sites.push(value);
-	  });
-	});*/
+	var host = uri.scheme() + "://" + uri.hostname();
+	
+	chrome.storage.local.get("sites", function(data) {
+		console.log("got data from chrome storage");
+		console.log(data);
+	});
 });
