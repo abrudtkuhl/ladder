@@ -1,11 +1,14 @@
-// hide.js
+/************
+hide.js
+Uses data in localstorage to hide elements on the client side
+*************/
+
 $(document).ready(function() {
-	var sites = [];
-	var uri = new URI();
-	var host = uri.scheme() + "://" + uri.hostname();
-	
 	chrome.storage.local.get("sites", function(data) {
-		console.log("got data from chrome storage");
+    var sites = data;
+    var uri = new URI();
+    var host = uri.scheme() + "://" + uri.hostname();
+		console.log("hide.js: got data from chrome storage");
 		console.log(data);
 	});
 });
