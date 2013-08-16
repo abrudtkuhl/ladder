@@ -33,26 +33,30 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 			return false;
 		}
 
-		var sites = data;
-		var uri = new URI(tab.url);
-		var host = uri.scheme() + "://" + uri.hostname();
+		var sites = data.sites;
 
 		// check our sites array for a record from the current URL
+		var uri = new URI(tab.url);
+		var host = uri.scheme() + "://" + uri.hostname();
+		console.log("host = " + host);
+
 		var results = $.grep(sites, function(e) {
 			return e.host === host;
 		});
 
-		// if there are results, process cookie munching
-		if (results !== null && results.length === 1) {
-			var site = results[0];
-			
-			if (site.cookie !== "undefined" && site.cookie !== "") {
-				console.log("## REMOVING COOKIE FOR " +  host + " COOKIE == " + site.cookie + " ##");
-				chrome.cookies.remove({
-					name: site.cookie,
-					url: site.host
-				});
-			}
+		// no match, get out
+		if (results === null || results.length !== 1) {
+			return false;
+		}
+
+		var site = results[0];
+
+		if (site.cookie !== "undefined" && site.cookie !== "") {
+			console.log("## REMOVING COOKIE FOR " +  host + " COOKIE == " + site.cookie + " ##");
+			chrome.cookies.remove({
+				name: site.cookie,
+				url: site.host
+			});
 		}
 	});
 });
