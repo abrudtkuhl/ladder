@@ -28,7 +28,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 
 	// grab data from localstorage
 	chrome.storage.local.get("sites", function(data) {
-		console.log(data);
 		if (data === null || data === "undefined" || data.length === 0) {
 			return false;
 		}
@@ -38,7 +37,6 @@ chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
 		// check our sites array for a record from the current URL
 		var uri = new URI(tab.url);
 		var host = uri.scheme() + "://" + uri.hostname();
-		console.log("host = " + host);
 
 		var results = $.grep(sites, function(e) {
 			return e.host === host;
