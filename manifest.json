@@ -12,7 +12,7 @@
     "scripts": ["lib/jquery-1.10.2.min.js", "lib/URI.min.js", "background.js"]
   },
   "content_scripts": [{
-    "matches": ["http://*/", "https://*/"],
+    "matches": ["http://*/*", "https://*/*"],
     "js": ["lib/jquery-1.10.2.min.js", "lib/URI.min.js", "hide.js"]
   }]
 }
