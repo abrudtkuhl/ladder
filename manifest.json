@@ -3,7 +3,7 @@
 
   "name": "Ladder",
   "description": "Hoist yourself over annoying paywalls",
-  "version": "0.1",
+  "version": "0.5",
 
   "permissions": [
     "storage", "cookies", "tabs", "http://*/*", "https://*/*"
@@ -11,8 +11,22 @@
   "background": {
     "scripts": ["lib/jquery-1.10.2.min.js", "lib/URI.min.js", "background.js"]
   },
-  "content_scripts": [{
-    "matches": ["http://*/*", "https://*/*"],
-    "js": ["lib/jquery-1.10.2.min.js", "lib/URI.min.js", "hide.js"]
-  }]
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["lib/jquery-1.10.2.min.js", "lib/URI.min.js"]
+    },
+    {
+      "matches": ["http://*.desmoinesregister.com/*"],
+      "css": ["sites/dmr.css"]
+    },
+    {
+      "matches": ["http://*.nytimes.com/*"],
+      "css": ["sites/nyt.css"]
+    },
+    {
+      "matches": ["http://*.washingtonpost.com/*"],
+      "css": ["sites/wap.css"]
+    }
+  ]
 }
