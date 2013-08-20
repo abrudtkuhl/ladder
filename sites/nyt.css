@@ -1,0 +1,3 @@
+/* nyt.css */
+#overlay, #gatewayCreative { display: none !important;}
+body { overflow: scroll !important;}
