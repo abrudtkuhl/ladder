@@ -1,12 +1,14 @@
-ladder
-======
+Ladder Chrome Extension
+=======================
 
 Ladder is a Chrome Extension that hoists you you over newspaper paywalls.
 
 Currently hoists you over nytimes.com, washingtonpost.com, desmoinesregister.com
 
+_Note: Working on getting into the Chrome Web Store but for now you can install the extension manually. See Instuctions below..._
+
 ##Installation Instructions##
-1. [Right Click and Save](https://raw.github.com/abrudtkuhl/DMRChrome/master/package/DMRChrome.crx) extension file to your computer
+1. [Right Click and Save](https://raw.github.com/abrudtkuhl/DMRChrome/master/release/ladder.crx) extension file to your computer
 2. Click the Chrome Menu icon ![chrome browser toolbar](https://storage.googleapis.com/support-kms-prod/SNP_2696434_en_v1) on the browser toolbar
 3. Select Tools > Extensions
 4. Locate the extension file on your computer and drag the file onto the Extensions page
