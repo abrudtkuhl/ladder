@@ -149,9 +149,12 @@ a.button:hover {
 a.button span {
   padding-left: 50px;
   display: block;
-  height: 23px;
+  height: 30px;
+  padding-top: 4px;
 }
-
+#download-crx span {
+  background: transparent url(https://storage.googleapis.com/support-kms-prod/SNP_2696434_en_v1) 12px 50% no-repeat;
+}
 #download-zip span {
   background: transparent url(../images/zip-icon.png) 12px 50% no-repeat;
 }
