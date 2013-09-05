@@ -5,6 +5,12 @@ Ladder is a Chrome Extension that hoists you you over newspaper paywalls.
 
 Currently hoists you over nytimes.com, washingtonpost.com, desmoinesregister.com
 
+##Add Your Favorite Site##
+[Read these instructions](http://abrudtkuhl.github.io/ladder/#sites-added)
+
+##Questions or Comments?##
+[Visit our trello board](https://trello.com/b/WjvPXkMK/ladder-chrome-extension) or [leave a comment](http://abrudtkuhl.github.io/ladder/#comments)
+
 _Note: Working on getting into the Chrome Web Store but for now you can install the extension manually. See Instuctions below..._
 
 ##Installation Instructions##
